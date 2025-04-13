@@ -2,11 +2,8 @@ package com.sparta.limited.auth_service.application.service;
 
 import com.sparta.limited.auth_service.application.dto.request.AuthSignupRequest;
 import com.sparta.limited.auth_service.application.dto.response.AuthSignupResponse;
-import com.sparta.limited.auth_service.application.mapper.AuthDtoMapper;
-import com.sparta.limited.auth_service.application.service.user.UserFeignService;
-import com.sparta.limited.auth_service.infrastructure.dto.request.UserCreateInternalRequest;
-import com.sparta.limited.auth_service.infrastructure.dto.response.UserCreateInternalResponse;
 import com.sparta.limited.auth_service.infrastructure.password.PasswordEncoderUtil;
+import com.sparta.limited.auth_service.infrastructure.service.UserFeignService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -18,11 +15,7 @@ public class AuthService {
 
     public AuthSignupResponse signup(AuthSignupRequest request) {
         String password = PasswordEncoderUtil.encode(request.getPassword());
-        UserCreateInternalRequest createUserRequest = AuthDtoMapper.toCreateUserInternalDto(
-            request,
-            password);
-        UserCreateInternalResponse response = userFeignService.createUser(createUserRequest);
-        return AuthDtoMapper.toSignupExternalResponse(response);
+        return userFeignService.createUser(request, password);
     }
 
 }
