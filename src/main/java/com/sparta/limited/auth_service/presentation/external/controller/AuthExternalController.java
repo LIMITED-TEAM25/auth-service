@@ -4,6 +4,7 @@ import com.sparta.limited.auth_service.application.service.AuthService;
 import com.sparta.limited.auth_service.presentation.dto.request.AuthSignupRequest;
 import com.sparta.limited.auth_service.presentation.dto.response.AuthSignupResponse;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -21,7 +22,7 @@ public class AuthExternalController {
     public ResponseEntity<AuthSignupResponse> signup(
         @RequestBody AuthSignupRequest request) {
         AuthSignupResponse response = authService.signup(request);
-        return ResponseEntity.ok(response);
+        return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
 }
