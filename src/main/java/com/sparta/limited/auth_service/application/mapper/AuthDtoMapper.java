@@ -1,4 +1,4 @@
-package com.sparta.limited.auth_service.infrastructure.feign;
+package com.sparta.limited.auth_service.application.mapper;
 
 import com.sparta.limited.auth_service.application.dto.request.AuthSignupRequest;
 import com.sparta.limited.auth_service.application.dto.response.AuthSignupResponse;
