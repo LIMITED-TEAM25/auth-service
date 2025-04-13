@@ -1,4 +1,4 @@
-package com.sparta.limited.auth_service.presentation.dto.response;
+package com.sparta.limited.auth_service.application.dto.response;
 
 import lombok.Getter;
 

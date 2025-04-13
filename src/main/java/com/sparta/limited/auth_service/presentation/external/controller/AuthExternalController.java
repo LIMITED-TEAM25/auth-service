@@ -1,8 +1,8 @@
 package com.sparta.limited.auth_service.presentation.external.controller;
 
+import com.sparta.limited.auth_service.application.dto.request.AuthSignupRequest;
+import com.sparta.limited.auth_service.application.dto.response.AuthSignupResponse;
 import com.sparta.limited.auth_service.application.service.AuthService;
-import com.sparta.limited.auth_service.presentation.dto.request.AuthSignupRequest;
-import com.sparta.limited.auth_service.presentation.dto.response.AuthSignupResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
