@@ -10,4 +10,11 @@ Content-Type: application/json
   "address": "서울"
 }
 
-###
+### 로그인 API 테스트
+POST http://localhost:8080/api/v1/auth/login
+Content-Type: application/json
+
+{
+  "username": "test",
+  "password": "1234"
+}
