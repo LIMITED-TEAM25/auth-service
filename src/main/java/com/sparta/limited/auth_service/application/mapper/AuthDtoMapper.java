@@ -1,9 +1,9 @@
-package com.sparta.limited.auth_service.infrastructure.feign;
+package com.sparta.limited.auth_service.application.mapper;
 
+import com.sparta.limited.auth_service.application.dto.request.AuthSignupRequest;
+import com.sparta.limited.auth_service.application.dto.response.AuthSignupResponse;
 import com.sparta.limited.auth_service.infrastructure.dto.request.UserCreateInternalRequest;
 import com.sparta.limited.auth_service.infrastructure.dto.response.UserCreateInternalResponse;
-import com.sparta.limited.auth_service.presentation.dto.request.AuthSignupRequest;
-import com.sparta.limited.auth_service.presentation.dto.response.AuthSignupResponse;
 
 public class AuthDtoMapper {
 
