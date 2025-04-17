@@ -26,11 +26,7 @@ public class AuthService {
 
     public AuthLoginResponse login(HttpServletResponse servletResponse, AuthLoginRequest request) {
         UserInfo userInfo = userFeignService.searchUserByUsername(request);
-
-        if (!PasswordEncoderUtil.isMatched(request.getPassword(), userInfo.password())) {
-            throw new RuntimeException("사용자 비밀번호가 일치하지 않습니다");
-        }
-
+        PasswordEncoderUtil.isMatched(request.getPassword(), userInfo.password());
         return jwtService.createTokens(servletResponse, userInfo);
     }
 

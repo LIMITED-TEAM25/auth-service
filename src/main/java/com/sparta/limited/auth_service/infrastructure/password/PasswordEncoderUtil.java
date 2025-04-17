@@ -8,7 +8,10 @@ public class PasswordEncoderUtil {
         return BCrypt.hashpw(password, BCrypt.gensalt());
     }
 
-    public static boolean isMatched(String rawPassword, String password) {
-        return BCrypt.checkpw(rawPassword, password);
+    public static void isMatched(String rawPassword, String password) {
+        if (!BCrypt.checkpw(rawPassword, password)) {
+            throw new RuntimeException("비밀번호가 일치하지 않습니다");
+        }
     }
+
 }
